@@ -1,0 +1,16 @@
+<script>
+    class Pay {
+        constructor(basepay) {
+            this.basepay = basepay;
+        }
+    }
+    class TeacherPay extends Pay {
+        constructor(classHours, basepay) {
+            super(basepay);
+            this.remuneration = classHours * 50;
+            this.pay = this.remuneration + this.basepay;
+        }
+    }
+    let teaPay = new TeacherPay(60, 5200);
+    console.log(teaPay);
+</script>

@@ -1,0 +1,25 @@
+<script>
+    class OnlineShop {
+        shopping() {
+            return '网店购物'
+        }
+    }
+    class BookShop extends OnlineShop {
+        browse() {
+            return '浏览图书目录'
+        }
+    }
+    let bookShop = new BookShop();
+    console.log(bookShop.shopping());
+    console.log(bookShop.browse());
+    class BuyShop {
+        purchase() {
+            return '购买图书'
+        }
+    }
+    Object.assign(BookShop.prototype, {
+        BuyShop: BuyShop.prototype.purchase
+    });
+
+    console.log(bookShop.BuyShop());
+</script>

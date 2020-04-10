@@ -1,0 +1,28 @@
+<script>
+    class Order {
+        constructor(modifyOpt) {
+            let initVal = {
+                price: 20,
+                disCount: 0.95,
+                invoice: false
+            };
+            this.detail = Object.assign({}, initVal, modifyOpt);
+            // console.log(this.detail);
+
+            Object.assign(this.detail, {
+                disPrice: this.detail.price * this.detail.disCount
+            });
+        }
+    }
+    let ord1 = new Order({
+        price: 30,
+        userName: 'zhang',
+        invoice: true
+    });
+    let ord2 = new Order({
+        price: 25,
+        disCount: 0.8
+    });
+    console.log(ord1.detail);
+    console.log(ord2.detail);
+</script>
